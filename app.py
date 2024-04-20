@@ -10,16 +10,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-
-
-
-
-
-# Rest of your backend code...
-
-# Rest of your backend code...
-
-
+CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
 
 # Set up logging
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -72,6 +63,8 @@ def register():
     return jsonify({"message": "Registration successful"})
 
 
+
+
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -79,13 +72,19 @@ def login():
     password = data.get('password')
 
     try:
-        cursor.execute("SELECT id, password, user_type FROM users WHERE email = %s", (email,))
+        cursor.execute("SELECT id, first_name, last_name, password, user_type FROM users WHERE email = %s", (email,))
         user = cursor.fetchone()
 
-        if user and bcrypt.checkpw(password.encode('utf-8'), user[1].encode('utf-8')):
+        if user and bcrypt.checkpw(password.encode('utf-8'), user[3].encode('utf-8')):
             session['user_id'] = user[0]  # Set session after successful login
             logging.info("User logged in: {}".format(email))
-            return jsonify({"message": "Login successful", "id": user[0], "userType": user[2]})
+            return jsonify({
+                "message": "Login successful",
+                "id": user[0],
+                "firstName": user[1],
+                "lastName": user[2],
+                "userType": user[4]
+            })
         else:
             logging.error("Failed login attempt: {}".format(email))
             return jsonify({"error": "Invalid email or password"}), 401
@@ -94,12 +93,12 @@ def login():
         return jsonify({"error": "An unexpected error occurred"}), 500
 
 
+
 @app.route('/api/logout', methods=['POST'])
 def logout():
     session.pop('user_id', None)
     logging.info("User logged out")
     return jsonify({"message": "Logout successful"})
-
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -115,19 +114,16 @@ def predict():
 
     if prediction < 0.5:
         result = "No hate"
+        prediction = int(prediction)
+        cursor.execute("INSERT INTO predictions (text, prediction, user_id) VALUES (%s, %s, %s)", (text, prediction, user_id))
+        db.commit()
+        logging.info("Prediction saved for user {}: {}".format(user_id, result))
+        return jsonify({"text": text, "prediction": result, "user_id": user_id})
     else:
         result = "Hate and abusive"
+        # Don't save anything in the database
+        return jsonify({"text": text,"prediction": result})
 
-    prediction = int(prediction)
-
-    cursor.execute("INSERT INTO predictions (text, prediction, user_id) VALUES (%s, %s, %s)", (text, prediction, user_id))
-    db.commit()
-
-    logging.info("Prediction saved for user {}: {}".format(user_id, result))
-
-    return jsonify({"text": text, "prediction": result, "user_id": user_id})
-
-CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
 
 @app.route('/api/predictions', methods=['GET'])
 def get_predictions():
@@ -173,6 +169,61 @@ def delete_prediction(prediction_id):
         logging.error("Error deleting prediction: {}".format(str(e)))
         return jsonify({"error": "An unexpected error occurred while deleting prediction"}), 500
 
+
+@app.route('/api/admin/active_users', methods=['GET'])
+def get_active_users():
+    # Check if the user is authenticated as admin
+    if 'user_id' not in session:
+        return jsonify({"error": "Unauthorized access"}), 401
+    
+    # Retrieve user information from session
+    user_id = session['user_id']
+    
+    try:
+        # Check if the user is an admin
+        cursor.execute("SELECT user_type FROM users WHERE id = %s", (user_id,))
+        user_type = cursor.fetchone()
+        if user_type and user_type[0] == 'ADMIN':
+            # Fetch active users
+            cursor.execute("SELECT id, first_name, last_name, email FROM users WHERE user_type = 'USER'")
+            active_users = cursor.fetchall()
+            
+            # Format active user data
+            active_users_list = []
+            for user in active_users:
+                user_dict = {
+                    "id": user[0],
+                    "first_name": user[1],
+                    "last_name": user[2],
+                    "email": user[3]
+                }
+                active_users_list.append(user_dict)
+            
+            return jsonify({"active_users": active_users_list})
+        else:
+            return jsonify({"error": "Unauthorized access"}), 401
+    except Exception as e:
+        logging.error("Error fetching active users: {}".format(str(e)))
+        return jsonify({"error": "An unexpected error occurred while fetching active users"}), 500
+
+@app.route('/api/total_users', methods=['GET'])
+def get_total_users():
+    # Check if the user is authenticated
+    if 'user_id' not in session:
+        return jsonify({"error": "Unauthorized access"}), 401
+    
+    # Retrieve user information from session
+    user_id = session['user_id']
+    
+    try:
+        # Fetch total number of users excluding admins
+        cursor.execute("SELECT COUNT(*) FROM users WHERE user_type = 'USER'")
+        total_users = cursor.fetchone()[0]
+            
+        return jsonify({"total_users": total_users})
+    except Exception as e:
+        logging.error("Error fetching total users: {}".format(str(e)))
+        return jsonify({"error": "An unexpected error occurred while fetching total users"}), 500
 
 if __name__ == '__main__':
     # Run the Flask app using Gunicorn
