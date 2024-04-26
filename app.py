@@ -100,7 +100,7 @@ def logout():
     logging.info("User logged out")
     return jsonify({"message": "Logout successful"})
 
-@app.route('/predict', methods=['POST'])
+@app.route('/api/post', methods=['POST'])
 def predict():
     if 'user_id' not in session:
         return jsonify({"error": "Unauthorized access"}), 401
@@ -125,7 +125,7 @@ def predict():
         return jsonify({"text": text,"prediction": result})
 
 
-@app.route('/api/predictions', methods=['GET'])
+@app.route('/api/view_post', methods=['GET'])
 def get_predictions():
     if 'user_id' not in session:
         return jsonify({"error": "Unauthorized access"}), 401
@@ -149,7 +149,7 @@ def get_predictions():
         logging.error("Error fetching predictions: {}".format(str(e)))
         return jsonify({"error": "An unexpected error occurred while fetching predictions"}), 500
 
-@app.route('/api/delete_prediction/<int:prediction_id>', methods=['DELETE'])
+@app.route('/api/delete_post/<int:prediction_id>', methods=['DELETE'])
 def delete_prediction(prediction_id):
     if 'user_id' not in session:
         return jsonify({"error": "Unauthorized access"}), 401
@@ -170,43 +170,8 @@ def delete_prediction(prediction_id):
         return jsonify({"error": "An unexpected error occurred while deleting prediction"}), 500
 
 
-@app.route('/api/admin/active_users', methods=['GET'])
-def get_active_users():
-    # Check if the user is authenticated as admin
-    if 'user_id' not in session:
-        return jsonify({"error": "Unauthorized access"}), 401
-    
-    # Retrieve user information from session
-    user_id = session['user_id']
-    
-    try:
-        # Check if the user is an admin
-        cursor.execute("SELECT user_type FROM users WHERE id = %s", (user_id,))
-        user_type = cursor.fetchone()
-        if user_type and user_type[0] == 'ADMIN':
-            # Fetch active users
-            cursor.execute("SELECT id, first_name, last_name, email FROM users WHERE user_type = 'USER'")
-            active_users = cursor.fetchall()
-            
-            # Format active user data
-            active_users_list = []
-            for user in active_users:
-                user_dict = {
-                    "id": user[0],
-                    "first_name": user[1],
-                    "last_name": user[2],
-                    "email": user[3]
-                }
-                active_users_list.append(user_dict)
-            
-            return jsonify({"active_users": active_users_list})
-        else:
-            return jsonify({"error": "Unauthorized access"}), 401
-    except Exception as e:
-        logging.error("Error fetching active users: {}".format(str(e)))
-        return jsonify({"error": "An unexpected error occurred while fetching active users"}), 500
 
-@app.route('/api/total_users', methods=['GET'])
+@app.route('/api/admin/total_users', methods=['GET'])
 def get_total_users():
     # Check if the user is authenticated
     if 'user_id' not in session:

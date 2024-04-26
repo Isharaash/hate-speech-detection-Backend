@@ -3,3 +3,5 @@ mysql-connector-python
 bcrypt
 gunicorn
 scikit-learn
+flask-cors
+
