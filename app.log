@@ -4355,3 +4355,458 @@ mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen@gmai
 2024-04-27 02:32:46,248 - INFO - 127.0.0.1 - - [27/Apr/2024 02:32:46] "GET /api/admin/total_users HTTP/1.1" 200 -
 2024-04-27 02:32:46,555 - INFO - 127.0.0.1 - - [27/Apr/2024 02:32:46] "GET /api/admin/total_users HTTP/1.1" 200 -
 2024-04-27 02:32:49,705 - INFO - 127.0.0.1 - - [27/Apr/2024 02:32:49] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-27 14:22:25,846 - INFO - package: mysql.connector.plugins
+2024-04-27 14:22:25,846 - INFO - plugin_name: mysql_native_password
+2024-04-27 14:22:25,846 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-27 14:22:27,428 - INFO - User logged in: user@gmail.com
+2024-04-27 14:22:27,776 - INFO - User registered: john70@gmail.com
+2024-04-27 14:23:37,001 - INFO - package: mysql.connector.plugins
+2024-04-27 14:23:37,002 - INFO - plugin_name: mysql_native_password
+2024-04-27 14:23:37,002 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-27 14:23:37,356 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-27 14:23:37,356 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-27 14:25:10,836 - INFO - package: mysql.connector.plugins
+2024-04-27 14:25:10,837 - INFO - plugin_name: mysql_native_password
+2024-04-27 14:25:10,837 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-27 14:25:11,534 - INFO - User logged in: user@gmail.com
+2024-04-27 14:25:11,883 - ERROR - Exception on /api/register [POST]
+Traceback (most recent call last):
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\app.py", line 58, in register
+    cursor.execute(query, (firstName, lastName, email, hashed_password, userType))
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\connection.py", line 855, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\connection.py", line 631, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'john70@gmail.com' for key 'users.email'
+2024-04-27 14:32:45,080 - INFO - User logged in: user@gmail.com
+2024-04-27 14:32:45,081 - INFO - 127.0.0.1 - - [27/Apr/2024 14:32:45] "POST /api/login HTTP/1.1" 200 -
+2024-04-27 14:32:47,451 - INFO - User registered: sa@gmail.com
+2024-04-27 14:32:47,451 - INFO - 127.0.0.1 - - [27/Apr/2024 14:32:47] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 01:46:31,479 - INFO - package: mysql.connector.plugins
+2024-04-28 01:46:31,536 - INFO - plugin_name: mysql_native_password
+2024-04-28 01:46:31,544 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 01:46:32,904 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-28 01:46:32,904 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-28 01:46:41,655 - INFO - User logged in: user@gmail.com
+2024-04-28 01:46:41,655 - INFO - 127.0.0.1 - - [28/Apr/2024 01:46:41] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 01:46:44,053 - INFO - User registered: sas@gmail.com
+2024-04-28 01:46:44,053 - INFO - 127.0.0.1 - - [28/Apr/2024 01:46:44] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 01:51:37,511 - INFO - User logged in: user@gmail.com
+2024-04-28 01:51:37,515 - INFO - 127.0.0.1 - - [28/Apr/2024 01:51:37] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 01:51:39,904 - INFO - User registered: sass@gmail.com
+2024-04-28 01:51:39,904 - INFO - 127.0.0.1 - - [28/Apr/2024 01:51:39] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 01:54:52,416 - INFO - User registered: sassd@gmail.com
+2024-04-28 01:54:52,416 - INFO - 127.0.0.1 - - [28/Apr/2024 01:54:52] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 01:54:54,796 - INFO - User logged in: user@gmail.com
+2024-04-28 01:54:54,796 - INFO - 127.0.0.1 - - [28/Apr/2024 01:54:54] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 01:54:56,850 - INFO - Prediction saved for user 7: No hate
+2024-04-28 01:54:56,850 - INFO - 127.0.0.1 - - [28/Apr/2024 01:54:56] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 01:54:58,888 - INFO - 127.0.0.1 - - [28/Apr/2024 01:54:58] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 01:55:00,958 - INFO - 127.0.0.1 - - [28/Apr/2024 01:55:00] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 01:55:53,501 - INFO - User registered: sassgd@gmail.com
+2024-04-28 01:55:53,501 - INFO - 127.0.0.1 - - [28/Apr/2024 01:55:53] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 01:55:55,890 - INFO - User logged in: user@gmail.com
+2024-04-28 01:55:55,948 - INFO - 127.0.0.1 - - [28/Apr/2024 01:55:55] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 01:55:58,064 - INFO - Prediction saved for user 7: No hate
+2024-04-28 01:55:58,064 - INFO - 127.0.0.1 - - [28/Apr/2024 01:55:58] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 01:56:00,104 - INFO - 127.0.0.1 - - [28/Apr/2024 01:56:00] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 01:56:02,189 - INFO - 127.0.0.1 - - [28/Apr/2024 01:56:02] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 01:59:05,535 - ERROR - Exception on /api/register [POST]
+Traceback (most recent call last):
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\app.py", line 58, in register
+    cursor.execute(query, (firstName, lastName, email, hashed_password, userType))
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\connection.py", line 855, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\connection.py", line 631, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'sassgd@gmail.com' for key 'users.email'
+2024-04-28 01:59:05,562 - INFO - 127.0.0.1 - - [28/Apr/2024 01:59:05] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+2024-04-28 01:59:20,998 - INFO - User registered: sassg1d@gmail.com
+2024-04-28 01:59:20,998 - INFO - 127.0.0.1 - - [28/Apr/2024 01:59:20] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 01:59:23,378 - INFO - User logged in: user@gmail.com
+2024-04-28 01:59:23,378 - INFO - 127.0.0.1 - - [28/Apr/2024 01:59:23] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 01:59:25,451 - INFO - Prediction saved for user 7: No hate
+2024-04-28 01:59:25,451 - INFO - 127.0.0.1 - - [28/Apr/2024 01:59:25] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 01:59:27,493 - INFO - 127.0.0.1 - - [28/Apr/2024 01:59:27] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 01:59:29,573 - INFO - 127.0.0.1 - - [28/Apr/2024 01:59:29] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 11:34:49,739 - INFO - package: mysql.connector.plugins
+2024-04-28 11:34:49,756 - INFO - plugin_name: mysql_native_password
+2024-04-28 11:34:49,760 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 11:34:50,456 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-28 11:34:50,456 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-28 11:38:35,189 - INFO - package: mysql.connector.plugins
+2024-04-28 11:38:35,189 - INFO - plugin_name: mysql_native_password
+2024-04-28 11:38:35,189 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 11:38:35,608 - INFO - Prediction deleted for user 7: 118
+2024-04-28 11:38:35,931 - INFO - User logged in: user@gmail.com
+2024-04-28 11:38:35,967 - INFO - Prediction saved for user 7: No hate
+2024-04-28 11:38:36,317 - INFO - User registered: john522@example.com
+2024-04-28 11:40:29,024 - INFO - package: mysql.connector.plugins
+2024-04-28 11:40:29,024 - INFO - plugin_name: mysql_native_password
+2024-04-28 11:40:29,024 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 11:40:29,425 - INFO - Prediction deleted for user 7: 124
+2024-04-28 11:40:29,766 - INFO - User logged in: user@gmail.com
+2024-04-28 11:40:29,786 - INFO - Prediction saved for user 7: No hate
+2024-04-28 11:41:35,322 - INFO - package: mysql.connector.plugins
+2024-04-28 11:41:35,322 - INFO - plugin_name: mysql_native_password
+2024-04-28 11:41:35,338 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 11:41:35,965 - INFO - User logged in: user@gmail.com
+2024-04-28 11:41:35,983 - INFO - Prediction saved for user 7: No hate
+2024-04-28 11:41:36,265 - INFO - User registered: john522a@example.com
+2024-04-28 11:42:25,101 - INFO - package: mysql.connector.plugins
+2024-04-28 11:42:25,101 - INFO - plugin_name: mysql_native_password
+2024-04-28 11:42:25,101 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 11:42:25,420 - INFO - Prediction deleted for user 7: 102
+2024-04-28 11:42:25,746 - INFO - User logged in: user@gmail.com
+2024-04-28 11:42:25,768 - INFO - Prediction saved for user 7: No hate
+2024-04-28 11:42:26,104 - INFO - User registered: john522aa@example.com
+2024-04-28 12:42:22,163 - INFO - package: mysql.connector.plugins
+2024-04-28 12:42:22,163 - INFO - plugin_name: mysql_native_password
+2024-04-28 12:42:22,163 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 12:42:23,371 - INFO - Prediction deleted for user 7: 126
+2024-04-28 12:42:23,707 - INFO - User logged in: user@gmail.com
+2024-04-28 12:42:23,738 - INFO - Prediction saved for user 7: No hate
+2024-04-28 12:43:24,982 - INFO - package: mysql.connector.plugins
+2024-04-28 12:43:24,983 - INFO - plugin_name: mysql_native_password
+2024-04-28 12:43:24,985 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-28 12:43:25,421 - INFO - Prediction deleted for user 7: 128
+2024-04-28 12:43:25,763 - INFO - User logged in: user@gmail.com
+2024-04-28 12:43:25,788 - INFO - Prediction saved for user 7: No hate
+2024-04-28 12:43:26,116 - INFO - User registered: john1522aa@example.com
+2024-04-28 12:46:09,049 - INFO - User logged in: user@gmail.com
+2024-04-28 12:46:09,049 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:09] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:46:11,094 - INFO - Prediction deleted for user 7: 98
+2024-04-28 12:46:11,096 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:11] "DELETE /api/delete_post/98 HTTP/1.1" 200 -
+2024-04-28 12:46:13,457 - INFO - User logged in: user@gmail.com
+2024-04-28 12:46:13,457 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:13] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:46:15,830 - INFO - User logged in: user@gmail.com
+2024-04-28 12:46:15,830 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:15] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:46:17,880 - INFO - Prediction saved for user 7: No hate
+2024-04-28 12:46:17,880 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:17] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 12:46:20,215 - INFO - User registered: ashen2a@gmail.com
+2024-04-28 12:46:20,215 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:20] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 12:46:22,603 - INFO - User logged in: admin@gmail.com
+2024-04-28 12:46:22,604 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:22] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:46:24,651 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:24] "GET /api/admin/total_users HTTP/1.1" 200 -
+2024-04-28 12:46:27,099 - INFO - User logged in: user@gmail.com
+2024-04-28 12:46:27,099 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:27] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:46:29,132 - INFO - 127.0.0.1 - - [28/Apr/2024 12:46:29] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:47:12,336 - ERROR - Exception on /api/register [POST]
+Traceback (most recent call last):
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\app.py", line 58, in register
+    cursor.execute(query, (firstName, lastName, email, hashed_password, userType))
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\cursor.py", line 748, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\connection.py", line 855, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ishar\AppData\Roaming\Python\Python311\site-packages\mysql\connector\connection.py", line 631, in _handle_result
+    raise get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen2a@gmail.com' for key 'users.email'
+2024-04-28 12:47:12,351 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:12] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+2024-04-28 12:47:15,125 - INFO - User logged in: user@gmail.com
+2024-04-28 12:47:15,125 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:15] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:47:18,030 - INFO - User logged in: user@gmail.com
+2024-04-28 12:47:18,030 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:18] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:47:20,084 - INFO - Prediction saved for user 7: No hate
+2024-04-28 12:47:20,084 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:20] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 12:47:22,926 - INFO - User logged in: user@gmail.com
+2024-04-28 12:47:22,926 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:22] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:47:24,963 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:24] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:47:27,853 - INFO - User logged in: user@gmail.com
+2024-04-28 12:47:27,853 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:27] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:47:29,884 - INFO - 127.0.0.1 - - [28/Apr/2024 12:47:29] "[33mDELETE /api/delete_post/98 HTTP/1.1[0m" 404 -
+2024-04-28 12:53:51,961 - INFO - 127.0.0.1 - - [28/Apr/2024 12:53:51] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 12:53:52,683 - INFO - User logged in: admin@gmail.com
+2024-04-28 12:53:52,684 - INFO - 127.0.0.1 - - [28/Apr/2024 12:53:52] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:53:54,449 - INFO - 127.0.0.1 - - [28/Apr/2024 12:53:54] "GET /api/admin/total_users HTTP/1.1" 200 -
+2024-04-28 12:53:54,778 - INFO - 127.0.0.1 - - [28/Apr/2024 12:53:54] "GET /api/admin/total_users HTTP/1.1" 200 -
+2024-04-28 12:54:30,142 - INFO - 127.0.0.1 - - [28/Apr/2024 12:54:30] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 12:54:30,795 - INFO - User logged in: user@gmail.com
+2024-04-28 12:54:30,796 - INFO - 127.0.0.1 - - [28/Apr/2024 12:54:30] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:54:37,899 - INFO - 127.0.0.1 - - [28/Apr/2024 12:54:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:54:38,206 - INFO - 127.0.0.1 - - [28/Apr/2024 12:54:38] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:54:39,975 - INFO - 127.0.0.1 - - [28/Apr/2024 12:54:39] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 12:56:29,308 - INFO - 127.0.0.1 - - [28/Apr/2024 12:56:29] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 12:56:29,934 - INFO - User logged in: user@gmail.com
+2024-04-28 12:56:29,935 - INFO - 127.0.0.1 - - [28/Apr/2024 12:56:29] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:56:37,063 - INFO - 127.0.0.1 - - [28/Apr/2024 12:56:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:56:37,373 - INFO - 127.0.0.1 - - [28/Apr/2024 12:56:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:56:39,100 - INFO - 127.0.0.1 - - [28/Apr/2024 12:56:39] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 12:57:05,091 - INFO - 127.0.0.1 - - [28/Apr/2024 12:57:05] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 12:57:05,743 - INFO - User logged in: user@gmail.com
+2024-04-28 12:57:05,743 - INFO - 127.0.0.1 - - [28/Apr/2024 12:57:05] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:57:12,842 - INFO - 127.0.0.1 - - [28/Apr/2024 12:57:12] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:57:13,154 - INFO - 127.0.0.1 - - [28/Apr/2024 12:57:13] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:57:14,892 - INFO - 127.0.0.1 - - [28/Apr/2024 12:57:14] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 12:58:13,373 - INFO - 127.0.0.1 - - [28/Apr/2024 12:58:13] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 12:58:13,994 - INFO - User logged in: user@gmail.com
+2024-04-28 12:58:13,994 - INFO - 127.0.0.1 - - [28/Apr/2024 12:58:13] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 12:58:15,235 - INFO - 127.0.0.1 - - [28/Apr/2024 12:58:15] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 12:58:15,557 - INFO - 127.0.0.1 - - [28/Apr/2024 12:58:15] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:00:32,360 - INFO - 127.0.0.1 - - [28/Apr/2024 13:00:32] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 13:00:33,009 - INFO - User logged in: user@gmail.com
+2024-04-28 13:00:33,009 - INFO - 127.0.0.1 - - [28/Apr/2024 13:00:33] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:00:40,117 - INFO - 127.0.0.1 - - [28/Apr/2024 13:00:40] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:00:40,426 - INFO - 127.0.0.1 - - [28/Apr/2024 13:00:40] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:00:42,187 - INFO - 127.0.0.1 - - [28/Apr/2024 13:00:42] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 13:05:06,653 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:06] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:07,011 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:07] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:07,230 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:07] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:07,342 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:07] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:25,727 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:25] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:25,749 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:25] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:26,083 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:26] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:26,331 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:26] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:27,989 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:27] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:28,316 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:28] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:28,583 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:28] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:36,140 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:36,185 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:36,322 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:36,531 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:36,649 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:36,779 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:36,841 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:36] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:37,092 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:37,177 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:37,258 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:37,420 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:37,507 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:05:37,594 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:37,726 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:37,914 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:38,041 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:38] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:05:38,229 - INFO - 127.0.0.1 - - [28/Apr/2024 13:05:38] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:07:06,798 - INFO - 127.0.0.1 - - [28/Apr/2024 13:07:06] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 13:07:07,410 - INFO - User logged in: user@gmail.com
+2024-04-28 13:07:07,410 - INFO - 127.0.0.1 - - [28/Apr/2024 13:07:07] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:07:14,547 - INFO - 127.0.0.1 - - [28/Apr/2024 13:07:14] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:07:14,856 - INFO - 127.0.0.1 - - [28/Apr/2024 13:07:14] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:09:09,147 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:09] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 13:09:09,760 - INFO - User logged in: user@gmail.com
+2024-04-28 13:09:09,760 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:09] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:09:16,904 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:16] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:09:17,207 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:17] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:09:19,087 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:19] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:09:19,109 - INFO - Prediction saved for user 7: No hate
+2024-04-28 13:09:19,109 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:19] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:09:19,421 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:19] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:09:19,696 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:19] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:09:21,551 - INFO - 127.0.0.1 - - [28/Apr/2024 13:09:21] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 13:12:42,364 - INFO - 127.0.0.1 - - [28/Apr/2024 13:12:42] "OPTIONS /api/delete_post/125 HTTP/1.1" 200 -
+2024-04-28 13:12:42,673 - INFO - Prediction deleted for user 7: 125
+2024-04-28 13:12:42,673 - INFO - 127.0.0.1 - - [28/Apr/2024 13:12:42] "DELETE /api/delete_post/125 HTTP/1.1" 200 -
+2024-04-28 13:12:42,930 - INFO - 127.0.0.1 - - [28/Apr/2024 13:12:42] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:24:18,864 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:18] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-04-28 13:24:19,482 - INFO - User registered: isharatest1@gmail.com
+2024-04-28 13:24:19,482 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:19] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 13:24:28,951 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:28] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 13:24:29,589 - INFO - User logged in: user@gmail.com
+2024-04-28 13:24:29,589 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:29] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:24:37,004 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:24:37,319 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:37] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:24:39,459 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:39] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:24:39,505 - INFO - Prediction saved for user 7: No hate
+2024-04-28 13:24:39,507 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:39] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:24:39,827 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:39] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:24:40,099 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:40] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:24:41,304 - INFO - 127.0.0.1 - - [28/Apr/2024 13:24:41] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 13:31:37,670 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:37] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-04-28 13:31:38,243 - INFO - User registered: isharatest21@gmail.com
+2024-04-28 13:31:38,243 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:38] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 13:31:47,755 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:47] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 13:31:48,366 - INFO - User logged in: user@gmail.com
+2024-04-28 13:31:48,368 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:48] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:31:55,825 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:55] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:31:56,129 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:56] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:31:58,303 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:58] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 13:31:58,320 - INFO - Prediction saved for user 7: No hate
+2024-04-28 13:31:58,320 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:58] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:31:58,639 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:58] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:31:58,894 - INFO - 127.0.0.1 - - [28/Apr/2024 13:31:58] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:32:00,119 - INFO - 127.0.0.1 - - [28/Apr/2024 13:32:00] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 13:36:08,948 - INFO - User registered: ashen22a@gmail.com
+2024-04-28 13:36:08,948 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:08] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 13:36:11,748 - INFO - User logged in: user@gmail.com
+2024-04-28 13:36:11,748 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:11] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:36:14,581 - INFO - User logged in: user@gmail.com
+2024-04-28 13:36:14,581 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:14] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:36:16,637 - INFO - Prediction saved for user 7: No hate
+2024-04-28 13:36:16,638 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:16] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 13:36:19,454 - INFO - User logged in: user@gmail.com
+2024-04-28 13:36:19,454 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:19] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:36:21,495 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:21] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 13:36:24,285 - INFO - User logged in: user@gmail.com
+2024-04-28 13:36:24,285 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:24] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:36:26,343 - INFO - Prediction deleted for user 7: 130
+2024-04-28 13:36:26,343 - INFO - 127.0.0.1 - - [28/Apr/2024 13:36:26] "DELETE /api/delete_post/130 HTTP/1.1" 200 -
+2024-04-28 13:50:46,375 - ERROR - Failed login attempt: test@gmail.com
+2024-04-28 13:50:46,376 - INFO - 127.0.0.1 - - [28/Apr/2024 13:50:46] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2024-04-28 13:50:48,729 - INFO - User registered: test@gmail.com
+2024-04-28 13:50:48,729 - INFO - 127.0.0.1 - - [28/Apr/2024 13:50:48] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 13:51:44,836 - INFO - User logged in: user@gmail.com
+2024-04-28 13:51:44,836 - INFO - 127.0.0.1 - - [28/Apr/2024 13:51:44] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 13:51:47,164 - INFO - User registered: testa@gmail.com
+2024-04-28 13:51:47,164 - INFO - 127.0.0.1 - - [28/Apr/2024 13:51:47] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 13:52:29,629 - ERROR - Failed login attempt: testaa@gmail.com
+2024-04-28 13:52:29,629 - INFO - 127.0.0.1 - - [28/Apr/2024 13:52:29] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2024-04-28 13:52:32,107 - INFO - User registered: testaa@gmail.com
+2024-04-28 13:52:32,107 - INFO - 127.0.0.1 - - [28/Apr/2024 13:52:32] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 14:54:15,846 - INFO - 127.0.0.1 - - [28/Apr/2024 14:54:15] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 15:10:27,986 - INFO - 127.0.0.1 - - [28/Apr/2024 15:10:27] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 15:10:28,618 - ERROR - Failed login attempt: user@gmail.com
+2024-04-28 15:10:28,619 - INFO - 127.0.0.1 - - [28/Apr/2024 15:10:28] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2024-04-28 15:11:45,139 - INFO - 127.0.0.1 - - [28/Apr/2024 15:11:45] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 15:11:45,778 - ERROR - Failed login attempt: user@gmail.com
+2024-04-28 15:11:45,778 - INFO - 127.0.0.1 - - [28/Apr/2024 15:11:45] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2024-04-28 15:13:35,518 - INFO - 127.0.0.1 - - [28/Apr/2024 15:13:35] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 15:13:36,130 - INFO - User logged in: user@gmail.com
+2024-04-28 15:13:36,133 - INFO - 127.0.0.1 - - [28/Apr/2024 15:13:36] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 15:13:52,185 - INFO - 127.0.0.1 - - [28/Apr/2024 15:13:52] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:13:52,427 - INFO - 127.0.0.1 - - [28/Apr/2024 15:13:52] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:33:43,649 - INFO - 127.0.0.1 - - [28/Apr/2024 15:33:43] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 15:33:44,082 - INFO - 127.0.0.1 - - [28/Apr/2024 15:33:44] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 15:33:44,232 - INFO - 127.0.0.1 - - [28/Apr/2024 15:33:44] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:33:44,403 - INFO - 127.0.0.1 - - [28/Apr/2024 15:33:44] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:44:51,631 - INFO - 127.0.0.1 - - [28/Apr/2024 15:44:51] "OPTIONS /api/delete_post/120 HTTP/1.1" 200 -
+2024-04-28 15:44:51,955 - INFO - Prediction deleted for user 7: 120
+2024-04-28 15:44:51,956 - INFO - 127.0.0.1 - - [28/Apr/2024 15:44:51] "DELETE /api/delete_post/120 HTTP/1.1" 200 -
+2024-04-28 15:44:52,215 - INFO - 127.0.0.1 - - [28/Apr/2024 15:44:52] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:47:33,402 - INFO - 127.0.0.1 - - [28/Apr/2024 15:47:33] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:47:34,091 - INFO - 127.0.0.1 - - [28/Apr/2024 15:47:34] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 15:50:42,653 - INFO - 127.0.0.1 - - [28/Apr/2024 15:50:42] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 16:39:43,194 - INFO - 127.0.0.1 - - [28/Apr/2024 16:39:43] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 16:39:43,816 - INFO - User logged in: user@gmail.com
+2024-04-28 16:39:43,816 - INFO - 127.0.0.1 - - [28/Apr/2024 16:39:43] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 16:39:45,280 - INFO - 127.0.0.1 - - [28/Apr/2024 16:39:45] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:39:45,597 - INFO - 127.0.0.1 - - [28/Apr/2024 16:39:45] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:40:13,969 - INFO - 127.0.0.1 - - [28/Apr/2024 16:40:13] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-28 16:47:27,804 - INFO - 127.0.0.1 - - [28/Apr/2024 16:47:27] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-04-28 16:47:28,345 - INFO - User registered: sadun@gmail.com
+2024-04-28 16:47:28,345 - INFO - 127.0.0.1 - - [28/Apr/2024 16:47:28] "POST /api/register HTTP/1.1" 200 -
+2024-04-28 16:49:51,182 - INFO - 127.0.0.1 - - [28/Apr/2024 16:49:51] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 16:49:51,511 - ERROR - Failed login attempt: shan@gmail.com
+2024-04-28 16:49:51,527 - INFO - 127.0.0.1 - - [28/Apr/2024 16:49:51] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2024-04-28 16:50:55,935 - INFO - 127.0.0.1 - - [28/Apr/2024 16:50:55] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-28 16:50:56,509 - INFO - User logged in: sadun@gmail.com
+2024-04-28 16:50:56,509 - INFO - 127.0.0.1 - - [28/Apr/2024 16:50:56] "POST /api/login HTTP/1.1" 200 -
+2024-04-28 16:51:07,625 - INFO - 127.0.0.1 - - [28/Apr/2024 16:51:07] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:51:07,933 - INFO - 127.0.0.1 - - [28/Apr/2024 16:51:07] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:52:17,879 - INFO - 127.0.0.1 - - [28/Apr/2024 16:52:17] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 16:52:18,281 - INFO - Prediction saved for user 43: No hate
+2024-04-28 16:52:18,281 - INFO - 127.0.0.1 - - [28/Apr/2024 16:52:18] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 16:52:18,465 - INFO - 127.0.0.1 - - [28/Apr/2024 16:52:18] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:52:18,625 - INFO - 127.0.0.1 - - [28/Apr/2024 16:52:18] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:53:44,415 - INFO - 127.0.0.1 - - [28/Apr/2024 16:53:44] "OPTIONS /api/delete_post/136 HTTP/1.1" 200 -
+2024-04-28 16:53:44,759 - INFO - Prediction deleted for user 43: 136
+2024-04-28 16:53:44,760 - INFO - 127.0.0.1 - - [28/Apr/2024 16:53:44] "DELETE /api/delete_post/136 HTTP/1.1" 200 -
+2024-04-28 16:53:45,004 - INFO - 127.0.0.1 - - [28/Apr/2024 16:53:45] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:04,613 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:04] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:04,918 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:04] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:21,147 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:21] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-28 16:54:21,479 - INFO - Prediction saved for user 43: No hate
+2024-04-28 16:54:21,495 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:21] "POST /api/post HTTP/1.1" 200 -
+2024-04-28 16:54:21,729 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:21] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:21,815 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:21] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:24,173 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:24] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:24,799 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:24] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:54:27,850 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:27] "OPTIONS /api/delete_post/137 HTTP/1.1" 200 -
+2024-04-28 16:54:28,185 - INFO - Prediction deleted for user 43: 137
+2024-04-28 16:54:28,187 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:28] "DELETE /api/delete_post/137 HTTP/1.1" 200 -
+2024-04-28 16:54:28,440 - INFO - 127.0.0.1 - - [28/Apr/2024 16:54:28] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-28 16:55:44,181 - INFO - 127.0.0.1 - - [28/Apr/2024 16:55:44] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-29 00:10:03,294 - INFO - package: mysql.connector.plugins
+2024-04-29 00:10:03,345 - INFO - plugin_name: mysql_native_password
+2024-04-29 00:10:03,345 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2024-04-29 00:10:04,830 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-29 00:10:04,830 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-29 00:10:39,280 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:39] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-04-29 00:10:39,861 - INFO - User registered: isharatest212@gmail.com
+2024-04-29 00:10:39,861 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:39] "POST /api/register HTTP/1.1" 200 -
+2024-04-29 00:10:49,644 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:49] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-29 00:10:50,254 - INFO - User logged in: user@gmail.com
+2024-04-29 00:10:50,254 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:50] "POST /api/login HTTP/1.1" 200 -
+2024-04-29 00:10:57,385 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:57] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-29 00:10:57,689 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:57] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-29 00:10:59,882 - INFO - 127.0.0.1 - - [29/Apr/2024 00:10:59] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-29 00:11:00,237 - INFO - Prediction saved for user 7: No hate
+2024-04-29 00:11:00,237 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:00] "POST /api/post HTTP/1.1" 200 -
+2024-04-29 00:11:00,453 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:00] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-29 00:11:00,560 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:00] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-29 00:11:01,660 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:01] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -

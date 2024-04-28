@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
 
-# Set up logging
+
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # MySQL Configuration
@@ -24,7 +24,7 @@ db = mysql.connector.connect(
 )
 cursor = db.cursor()
 
-# Create a table to store predicted text and its prediction if not exists
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS predictions (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -34,13 +34,15 @@ cursor.execute("""
     )
 """)
 
-# Load SVM model
+
 with open('svm_model.pkl', 'rb') as f:
     svm_model = pickle.load(f)
 
-# Load CountVectorizer tokenizer
+
 with open('count_vectorizer.pkl', 'rb') as f:
     count_vectorizer = pickle.load(f)
+
+
 
 
 @app.route('/api/register', methods=['POST'])
@@ -65,6 +67,7 @@ def register():
 
 
 
+
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -76,7 +79,7 @@ def login():
         user = cursor.fetchone()
 
         if user and bcrypt.checkpw(password.encode('utf-8'), user[3].encode('utf-8')):
-            session['user_id'] = user[0]  # Set session after successful login
+            session['user_id'] = user[0]  
             logging.info("User logged in: {}".format(email))
             return jsonify({
                 "message": "Login successful",
@@ -94,11 +97,15 @@ def login():
 
 
 
+
 @app.route('/api/logout', methods=['POST'])
 def logout():
     session.pop('user_id', None)
     logging.info("User logged out")
     return jsonify({"message": "Logout successful"})
+
+
+
 
 @app.route('/api/post', methods=['POST'])
 def predict():
@@ -121,8 +128,10 @@ def predict():
         return jsonify({"text": text, "prediction": result, "user_id": user_id})
     else:
         result = "Hate and abusive"
-        # Don't save anything in the database
+     
         return jsonify({"text": text,"prediction": result})
+
+
 
 
 @app.route('/api/view_post', methods=['GET'])
@@ -149,6 +158,9 @@ def get_predictions():
         logging.error("Error fetching predictions: {}".format(str(e)))
         return jsonify({"error": "An unexpected error occurred while fetching predictions"}), 500
 
+
+
+
 @app.route('/api/delete_post/<int:prediction_id>', methods=['DELETE'])
 def delete_prediction(prediction_id):
     if 'user_id' not in session:
@@ -173,15 +185,15 @@ def delete_prediction(prediction_id):
 
 @app.route('/api/admin/total_users', methods=['GET'])
 def get_total_users():
-    # Check if the user is authenticated
+    
     if 'user_id' not in session:
         return jsonify({"error": "Unauthorized access"}), 401
     
-    # Retrieve user information from session
+    
     user_id = session['user_id']
     
     try:
-        # Fetch total number of users excluding admins
+    
         cursor.execute("SELECT COUNT(*) FROM users WHERE user_type = 'USER'")
         total_users = cursor.fetchone()[0]
             
@@ -191,7 +203,7 @@ def get_total_users():
         return jsonify({"error": "An unexpected error occurred while fetching total users"}), 500
 
 if __name__ == '__main__':
-    # Run the Flask app using Gunicorn
+   
     app.run(debug=False, host='0.0.0.0', port=5000)
 
 
