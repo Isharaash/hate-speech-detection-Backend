@@ -4850,3 +4850,26 @@ mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen2a@gm
 2024-04-30 19:29:13,408 - INFO - [33mPress CTRL+C to quit[0m
 2024-04-30 19:30:16,451 - INFO - 127.0.0.1 - - [30/Apr/2024 19:30:16] "GET /status HTTP/1.1" 200 -
 2024-04-30 19:30:16,506 - INFO - 127.0.0.1 - - [30/Apr/2024 19:30:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-04-30 19:36:44,806 - INFO - 127.0.0.1 - - [30/Apr/2024 19:36:44] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-30 19:36:45,115 - INFO - 127.0.0.1 - - [30/Apr/2024 19:36:45] "[31m[1mPOST /api/post HTTP/1.1[0m" 401 -
+2024-04-30 19:46:13,290 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-30 19:46:13,290 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-30 19:54:20,162 - INFO - 127.0.0.1 - - [30/Apr/2024 19:54:20] "[31m[1mGET /api/post HTTP/1.1[0m" 405 -
+2024-04-30 19:58:46,832 - INFO - 127.0.0.1 - - [30/Apr/2024 19:58:46] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-30 19:58:47,144 - INFO - 127.0.0.1 - - [30/Apr/2024 19:58:47] "[31m[1mPOST /api/post HTTP/1.1[0m" 401 -
+2024-04-30 20:03:28,343 - INFO - 127.0.0.1 - - [30/Apr/2024 20:03:28] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-30 20:03:28,668 - INFO - 127.0.0.1 - - [30/Apr/2024 20:03:28] "[31m[1mPOST /api/post HTTP/1.1[0m" 401 -
+2024-04-30 20:04:09,232 - INFO - 127.0.0.1 - - [30/Apr/2024 20:04:09] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-30 20:04:09,547 - INFO - 127.0.0.1 - - [30/Apr/2024 20:04:09] "[31m[1mPOST /api/post HTTP/1.1[0m" 401 -
+2024-04-30 20:05:21,548 - INFO - 127.0.0.1 - - [30/Apr/2024 20:05:21] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-30 20:05:22,780 - INFO - User logged in: isharaashen1234@gmail.com
+2024-04-30 20:05:22,802 - INFO - 127.0.0.1 - - [30/Apr/2024 20:05:22] "POST /api/login HTTP/1.1" 200 -
+2024-04-30 20:05:57,459 - INFO - 127.0.0.1 - - [30/Apr/2024 20:05:57] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-30 20:05:58,172 - INFO - User logged in: wegapitiya123aa4@gmail.com
+2024-04-30 20:05:58,174 - INFO - 127.0.0.1 - - [30/Apr/2024 20:05:58] "POST /api/login HTTP/1.1" 200 -
+2024-04-30 20:06:02,923 - INFO - 127.0.0.1 - - [30/Apr/2024 20:06:02] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-30 20:06:03,433 - INFO - Prediction saved for user 2: No hate
+2024-04-30 20:06:03,436 - INFO - 127.0.0.1 - - [30/Apr/2024 20:06:03] "POST /api/post HTTP/1.1" 200 -
