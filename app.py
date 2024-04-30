@@ -48,9 +48,11 @@ with open('svm_model.pkl', 'rb') as f:
 
 with open('count_vectorizer.pkl', 'rb') as f:
     count_vectorizer = pickle.load(f)
-
-
-
+    
+@app.route('/status', methods=['GET'])
+def status():
+    
+     return jsonify({"message": "successful stats"})
 
 @app.route('/api/register', methods=['POST'])
 def register():

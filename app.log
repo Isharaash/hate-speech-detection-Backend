@@ -4810,3 +4810,36 @@ mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen2a@gm
 2024-04-29 00:11:00,453 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:00] "GET /api/view_post HTTP/1.1" 200 -
 2024-04-29 00:11:00,560 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:00] "GET /api/view_post HTTP/1.1" 200 -
 2024-04-29 00:11:01,660 - INFO - 127.0.0.1 - - [29/Apr/2024 00:11:01] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-04-30 09:41:27,015 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-30 09:41:27,026 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-30 09:45:26,641 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:26] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-04-30 09:45:27,348 - INFO - User registered: isharaashen1234@gmail.com
+2024-04-30 09:45:27,348 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:27] "POST /api/register HTTP/1.1" 200 -
+2024-04-30 09:45:35,641 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:35] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-04-30 09:45:36,425 - INFO - User logged in: isharaashen1234@gmail.com
+2024-04-30 09:45:36,425 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:36] "POST /api/login HTTP/1.1" 200 -
+2024-04-30 09:45:38,655 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:38] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-30 09:45:39,033 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:39] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-30 09:45:53,858 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:53] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-04-30 09:45:54,482 - INFO - Prediction saved for user 1: No hate
+2024-04-30 09:45:54,496 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:54] "POST /api/post HTTP/1.1" 200 -
+2024-04-30 09:45:54,588 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:54] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-30 09:45:54,982 - INFO - 127.0.0.1 - - [30/Apr/2024 09:45:54] "GET /api/view_post HTTP/1.1" 200 -
+2024-04-30 15:17:04,090 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-30 15:17:04,092 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-30 19:25:59,642 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-30 19:25:59,643 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-30 19:27:03,014 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-30 19:27:03,014 - INFO - [33mPress CTRL+C to quit[0m
