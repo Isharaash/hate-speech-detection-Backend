@@ -16,6 +16,13 @@ CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # MySQL Configuration
+# db = mysql.connector.connect(
+#     host="localhost",
+#     user="root",
+#     password="",
+#     database="hate"
+# )
+
 db = mysql.connector.connect(
     host="sql6.freesqldatabase.com",
     user="sql6702918",
