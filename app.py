@@ -17,10 +17,10 @@ logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s 
 
 # MySQL Configuration
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="hate"
+    host="sql6.freesqldatabase.com",
+    user="sql6702918",
+    password="CPvVvMXKYv",
+    database="sql6702918"
 )
 cursor = db.cursor()
 
