@@ -4912,3 +4912,8 @@ mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen2a@gm
 2024-05-02 17:18:59,647 - INFO - 127.0.0.1 - - [02/May/2024 17:18:59] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
 2024-05-02 17:19:17,732 - INFO - 127.0.0.1 - - [02/May/2024 17:19:17] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
 2024-05-02 17:19:17,983 - INFO - 127.0.0.1 - - [02/May/2024 17:19:17] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
+2024-05-02 17:20:29,170 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-05-02 17:20:29,170 - INFO - [33mPress CTRL+C to quit[0m
