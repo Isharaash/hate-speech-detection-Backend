@@ -10,11 +10,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-CORS(app, supports_credentials=True, origins=[
-    "https://inspiring-figolla-b9f092.netlify.app",
-    "https://hate-speech-detection-xmnr.onrender.com"
-])
-
+CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
 
 
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

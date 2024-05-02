@@ -4873,3 +4873,33 @@ mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen2a@gm
 2024-04-30 20:06:02,923 - INFO - 127.0.0.1 - - [30/Apr/2024 20:06:02] "OPTIONS /api/post HTTP/1.1" 200 -
 2024-04-30 20:06:03,433 - INFO - Prediction saved for user 2: No hate
 2024-04-30 20:06:03,436 - INFO - 127.0.0.1 - - [30/Apr/2024 20:06:03] "POST /api/post HTTP/1.1" 200 -
+2024-04-30 21:04:44,839 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-04-30 21:04:44,839 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-01 00:26:32,902 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-05-01 00:26:32,902 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-02 17:04:18,325 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-05-02 17:04:18,333 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-02 17:06:20,462 - INFO - 127.0.0.1 - - [02/May/2024 17:06:20] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-05-02 17:06:21,317 - INFO - User logged in: isharaashen1234@gmail.com
+2024-05-02 17:06:21,323 - INFO - 127.0.0.1 - - [02/May/2024 17:06:21] "POST /api/login HTTP/1.1" 200 -
+2024-05-02 17:06:22,876 - INFO - 127.0.0.1 - - [02/May/2024 17:06:22] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 17:06:23,261 - INFO - 127.0.0.1 - - [02/May/2024 17:06:23] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 17:06:48,435 - INFO - 127.0.0.1 - - [02/May/2024 17:06:48] "OPTIONS /api/post HTTP/1.1" 200 -
+2024-05-02 17:06:49,037 - INFO - Prediction saved for user 1: No hate
+2024-05-02 17:06:49,037 - INFO - 127.0.0.1 - - [02/May/2024 17:06:49] "POST /api/post HTTP/1.1" 200 -
+2024-05-02 17:06:49,126 - INFO - 127.0.0.1 - - [02/May/2024 17:06:49] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 17:06:49,511 - INFO - 127.0.0.1 - - [02/May/2024 17:06:49] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 17:07:18,701 - INFO - 127.0.0.1 - - [02/May/2024 17:07:18] "OPTIONS /api/delete_post/2 HTTP/1.1" 200 -
+2024-05-02 17:07:19,292 - INFO - Prediction deleted for user 1: 2
+2024-05-02 17:07:19,292 - INFO - 127.0.0.1 - - [02/May/2024 17:07:19] "DELETE /api/delete_post/2 HTTP/1.1" 200 -
+2024-05-02 17:07:19,412 - INFO - 127.0.0.1 - - [02/May/2024 17:07:19] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 17:11:20,010 - INFO - 127.0.0.1 - - [02/May/2024 17:11:20] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
