@@ -4917,3 +4917,74 @@ mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'ashen2a@gm
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.8.178:5000
 2024-05-02 17:20:29,170 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-02 17:26:35,241 - INFO - 127.0.0.1 - - [02/May/2024 17:26:35] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-05-02 17:26:41,077 - INFO - 127.0.0.1 - - [02/May/2024 17:26:41] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
+2024-05-02 17:26:41,336 - INFO - 127.0.0.1 - - [02/May/2024 17:26:41] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
+2024-05-02 17:27:06,554 - INFO - 127.0.0.1 - - [02/May/2024 17:27:06] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
+2024-05-02 17:27:06,876 - INFO - 127.0.0.1 - - [02/May/2024 17:27:06] "[31m[1mGET /api/view_post HTTP/1.1[0m" 401 -
+2024-05-02 19:16:47,406 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-05-02 19:16:47,418 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-02 19:17:05,961 - INFO - 127.0.0.1 - - [02/May/2024 19:17:05] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-05-02 19:17:06,734 - INFO - User logged in: isharaashen1234@gmail.com
+2024-05-02 19:17:06,734 - INFO - 127.0.0.1 - - [02/May/2024 19:17:06] "POST /api/login HTTP/1.1" 200 -
+2024-05-02 19:17:08,007 - INFO - 127.0.0.1 - - [02/May/2024 19:17:08] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 19:17:08,375 - INFO - 127.0.0.1 - - [02/May/2024 19:17:08] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 19:22:54,935 - INFO - 127.0.0.1 - - [02/May/2024 19:22:54] "[31m[1mPOST /api/login HTTP/1.1[0m" 415 -
+2024-05-02 19:23:46,473 - INFO - 127.0.0.1 - - [02/May/2024 19:23:46] "OPTIONS /api/login HTTP/1.1" 200 -
+2024-05-02 19:23:47,119 - INFO - User logged in: isharaashen1234@gmail.com
+2024-05-02 19:23:47,119 - INFO - 127.0.0.1 - - [02/May/2024 19:23:47] "POST /api/login HTTP/1.1" 200 -
+2024-05-02 19:23:48,476 - INFO - 127.0.0.1 - - [02/May/2024 19:23:48] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-02 19:23:48,837 - INFO - 127.0.0.1 - - [02/May/2024 19:23:48] "GET /api/view_post HTTP/1.1" 200 -
+2024-05-05 19:29:55,081 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-05-05 19:29:55,096 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-05 19:33:03,441 - INFO - 127.0.0.1 - - [05/May/2024 19:33:03] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-05-05 19:33:04,198 - ERROR - Exception on /api/register [POST]
+Traceback (most recent call last):
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\mysql\connector\connection_cext.py", line 661, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'hatespeech.users' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\app.py", line 77, in register
+    cursor.execute(query, (firstName, lastName, email, hashed_password, userType))
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\mysql\connector\cursor_cext.py", line 374, in execute
+    result = self._cnx.cmd_query(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 74, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Final Project\hate speech backend\env\Lib\site-packages\mysql\connector\connection_cext.py", line 669, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'hatespeech.users' doesn't exist
+2024-05-05 19:33:04,335 - INFO - 127.0.0.1 - - [05/May/2024 19:33:04] "[35m[1mPOST /api/register HTTP/1.1[0m" 500 -
+2024-05-05 19:48:25,345 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.8.178:5000
+2024-05-05 19:48:25,368 - INFO - [33mPress CTRL+C to quit[0m
+2024-05-05 19:48:42,968 - INFO - 127.0.0.1 - - [05/May/2024 19:48:42] "OPTIONS /api/register HTTP/1.1" 200 -
+2024-05-05 19:48:43,786 - INFO - User registered: isharaashen1234@gmail.com
+2024-05-05 19:48:43,786 - INFO - 127.0.0.1 - - [05/May/2024 19:48:43] "POST /api/register HTTP/1.1" 200 -

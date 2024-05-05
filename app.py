@@ -5,12 +5,12 @@ import pickle
 import logging
 from clean_text import clean_text
 from sklearn.feature_extraction.text import CountVectorizer
-# from flask_cors import CORS
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-# CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
+CORS(app, supports_credentials=True, methods=["GET", "POST", "DELETE"])
 
 
 logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -23,11 +23,18 @@ logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s 
 #     database="hate"
 # )
 
+# db = mysql.connector.connect(
+#     host="sql6.freesqldatabase.com",
+#     user="sql6702918",
+#     password="CPvVvMXKYv",
+#     database="sql6702918"
+# )
+
 db = mysql.connector.connect(
-    host="sql6.freesqldatabase.com",
-    user="sql6702918",
-    password="CPvVvMXKYv",
-    database="sql6702918"
+    host="35.200.211.122",
+    user="root",
+    password="",
+    database="hatespeech"
 )
 cursor = db.cursor()
 
